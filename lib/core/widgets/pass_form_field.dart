@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
 class PasswordCustomTextForm extends StatelessWidget {
-  const PasswordCustomTextForm({super.key, required this.labelText, required this.controller, this.onFieldSubmitted});
+  const PasswordCustomTextForm(
+      {super.key,
+      required this.labelText,
+      required this.controller,
+      this.onFieldSubmitted,
+      required this.width});
   final String labelText;
   final TextEditingController controller;
   final String? Function(String?)? onFieldSubmitted;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.sizeOf(context).width/1.5,
+      width: width,
       height: 45,
       child: TextFormField(
         controller: controller,
         onFieldSubmitted: onFieldSubmitted,
-        decoration:  InputDecoration(
+        decoration: InputDecoration(
             labelText: labelText,
             labelStyle: TextStyle(
               fontFamily: 'font2',
@@ -23,29 +29,19 @@ class PasswordCustomTextForm extends StatelessWidget {
             ),
             contentPadding: EdgeInsets.all(10),
             suffixIcon: IconButton(
-                onPressed: (){},
+                onPressed: () {},
                 icon: Icon(
-                    Icons.visibility_off,
+                  Icons.visibility_off,
                   color: Colors.grey[400],
-                )
-            ),
+                )),
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(
-                    color: Colors.grey[400]!,
-                    width: 1
-                )
-            ),
+                borderSide: BorderSide(color: Colors.grey[400]!, width: 1)),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
-            )
-        ),
-        style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 15
-        ),
+            )),
+        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
       ),
     );
-
   }
 }

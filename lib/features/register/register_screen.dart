@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../core/themes/colors.dart';
-import '../constants/custom_button.dart';
-import '../constants/form_fieled.dart';
-import '../constants/pass_form_field.dart';
-import '../constants/text.dart';
+import '../../core/themes/colors.dart';
+import '../../core/widgets/custom_button.dart';
+import '../../core/widgets/form_fieled.dart';
+import '../../core/widgets/pass_form_field.dart';
+import '../../core/themes/text.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -15,6 +15,7 @@ class RegisterScreen extends StatelessWidget {
     var nameController = TextEditingController();
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
+    var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -25,7 +26,7 @@ class RegisterScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Sign up', style: Styles.style30),
+                Text('Sign up', style: Styles.style35),
                 SizedBox(
                   height: 20,
                 ),
@@ -37,27 +38,32 @@ class RegisterScreen extends StatelessWidget {
                   height: 40,
                 ),
                 CustomTextForm(
-                    width: MediaQuery.sizeOf(context).width / 1.5,
+                    width: width / 1.2,
                     labelText: 'Name',
                     controller: nameController),
                 SizedBox(
                   height: 20,
                 ),
                 CustomTextForm(
-                    width: MediaQuery.sizeOf(context).width / 1.5,
+                    width: width / 1.2,
                     labelText: 'Email',
                     controller: emailController),
                 SizedBox(
                   height: 20,
                 ),
                 PasswordCustomTextForm(
-                    labelText: 'Password', controller: passwordController),
+                  labelText: 'Password',
+                  controller: passwordController,
+                  width: width / 1.2,
+                ),
                 SizedBox(
                   height: 20,
                 ),
                 PasswordCustomTextForm(
-                    labelText: 'Confirm password',
-                    controller: passwordController),
+                  labelText: 'Confirm password',
+                  controller: passwordController,
+                  width: width / 1.2,
+                ),
                 SizedBox(
                   height: 40,
                 ),
@@ -108,7 +114,7 @@ class RegisterScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset(
-                          'lib/assets/images/google.svg',
+                          'lib/assets/images/svg/google.svg',
                           height: 25,
                           fit: BoxFit.scaleDown,
                         ),

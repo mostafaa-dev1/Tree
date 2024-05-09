@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'core/themes/colors.dart';
-import 'constants/text.dart';
+import '../../core/themes/colors.dart';
+import '../../core/themes/text.dart';
 
 class FavoritesScreen extends StatefulWidget {
   const FavoritesScreen({super.key});
@@ -34,7 +34,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               alignment: Alignment.topRight,
               children: [
                 Container(
-                  padding: EdgeInsets.only(bottom: 10),
+                  padding: const EdgeInsets.only(bottom: 10),
                   width: width > 500 ? width / 3 - 25 : width / 2 - 25,
                   height: 270,
                   decoration: BoxDecoration(
@@ -45,17 +45,18 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             color: Colors.grey[200]!,
                             blurRadius: 7,
                             spreadRadius: 1,
-                            offset: Offset(0, 3))
+                            offset: const Offset(0, 3))
                       ]),
                   child: Column(
                     children: [
-                      Image(
-                        image: AssetImage('lib/assets/images/image41.jpg'),
+                      const Image(
+                        image:
+                            AssetImage('lib/assets/images/products/man2.png'),
                         width: 300,
                         height: 200,
                         fit: BoxFit.fill,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Padding(
@@ -90,7 +91,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                             ),
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.star,
                                   color: Colors.orangeAccent,
                                 ),
@@ -109,7 +110,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: Container(
-                      padding: EdgeInsets.all(3),
+                      padding: const EdgeInsets.all(3),
                       height: 45,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,

@@ -4,9 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:icon_broken/icon_broken.dart';
 import 'package:stepper_counter_swipe/stepper_counter_swipe.dart';
 
-import 'checkout_screen.dart';
-import 'core/themes/colors.dart';
-import 'constants/text.dart';
+import '../checkout/checkout_screen.dart';
+import '../../core/themes/colors.dart';
+import '../../core/themes/text.dart';
 
 class ItemInfoScreen extends StatefulWidget {
   const ItemInfoScreen({super.key, required this.image});
@@ -23,12 +23,12 @@ List<String> sizes = [
   'XXL',
 ];
 
-List<String> images = [
-  'lib/assets/images/image1.png',
-  'lib/assets/images/image2.png',
-  'lib/assets/images/image2.png',
-  'lib/assets/images/image1.png',
-];
+// List<String> images = [
+//   'lib/assets/images/image1.png',
+//   'lib/assets/images/image2.png',
+//   'lib/assets/images/image2.png',
+//   'lib/assets/images/image1.png',
+// ];
 
 int? sizeIndex;
 int? initialValue = 1;
@@ -77,7 +77,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                           color: Colors.grey[200]!,
                                           blurRadius: 7,
                                           spreadRadius: 1,
-                                          offset: Offset(0, 4))
+                                          offset: const Offset(0, 4))
                                     ]),
                                 child: IconButton(
                                     onPressed: () {
@@ -88,7 +88,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                       color: Colors.black,
                                     )),
                               ),
-                              Spacer(),
+                              const Spacer(),
                               Container(
                                 decoration: BoxDecoration(
                                     shape: BoxShape.circle,
@@ -98,7 +98,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                           color: Colors.grey[200]!,
                                           blurRadius: 7,
                                           spreadRadius: 1,
-                                          offset: Offset(0, 4))
+                                          offset: const Offset(0, 4))
                                     ]),
                                 child: IconButton(
                                     onPressed: () {},
@@ -109,18 +109,18 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                               ),
                             ],
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Container(
                               height: 80,
                               width: MediaQuery.sizeOf(context).width / 1.5,
-                              padding: EdgeInsets.all(10),
+                              padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                 color: Colors.grey[100],
                                 borderRadius: BorderRadius.circular(10),
                               ),
                               child: ListView.separated(
                                   scrollDirection: Axis.horizontal,
-                                  physics: BouncingScrollPhysics(),
+                                  physics: const BouncingScrollPhysics(),
                                   shrinkWrap: true,
                                   itemBuilder: (context, index) {
                                     return GestureDetector(
@@ -138,7 +138,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                             image:
                                                 AssetImage(widget.image[index]),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height: 5,
                                           ),
                                           Container(
@@ -153,7 +153,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                     );
                                   },
                                   separatorBuilder: (context, index) =>
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 5,
                                       ),
                                   itemCount: widget.image.length)),
@@ -165,7 +165,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
               ),
               SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
@@ -173,7 +173,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                           color: Colors.grey[200]!,
                           blurRadius: 7,
                           spreadRadius: 1,
-                          offset: Offset(4, -4))
+                          offset: const Offset(4, -4))
                     ],
                   ),
                   child: Column(
@@ -188,7 +188,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                           ),
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.star,
                                 color: Colors.orangeAccent,
                               ),
@@ -200,7 +200,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       const Text(
@@ -210,7 +210,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                             fontFamily: 'font2',
                             color: Colors.black),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       const Text(
@@ -222,14 +222,14 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                             fontFamily: 'font3',
                             color: Colors.grey),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Text(
                         'Size',
                         style: Styles.style18,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       SizedBox(
@@ -244,7 +244,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                   });
                                 },
                                 child: Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       vertical: 10, horizontal: 15),
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
@@ -265,12 +265,13 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                 ),
                               );
                             },
-                            separatorBuilder: (context, index) => SizedBox(
+                            separatorBuilder: (context, index) =>
+                                const SizedBox(
                                   width: 10,
                                 ),
                             itemCount: sizes.length),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Row(
@@ -286,7 +287,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                       color: Colors.grey[200]!,
                                       blurRadius: 7,
                                       spreadRadius: 1,
-                                      offset: Offset(0, 4))
+                                      offset: const Offset(0, 4))
                                 ],
                                 borderRadius: BorderRadius.circular(50)),
                             child: StepperSwipe(
@@ -294,9 +295,9 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                 speedTransitionLimitCount: 3,
                                 initialValue: 1,
                                 firstIncrementDuration:
-                                    Duration(milliseconds: 250),
+                                    const Duration(milliseconds: 250),
                                 secondIncrementDuration:
-                                    Duration(milliseconds: 100),
+                                    const Duration(milliseconds: 100),
                                 maxValue: 10,
                                 minValue: 1,
                                 dragButtonColor: AppColors.mainColor,
@@ -316,7 +317,8 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => CheckoutScreen(),
+                                        builder: (context) =>
+                                            const CheckoutScreen(),
                                       ));
                                 },
                                 child: Row(
@@ -328,7 +330,7 @@ class _ItemInfoScreenState extends State<ItemInfoScreen> {
                                           fontWeight: FontWeight.bold,
                                           fontSize: 15),
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10,
                                     ),
                                     Container(

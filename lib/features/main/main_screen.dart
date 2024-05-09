@@ -1,12 +1,12 @@
-import 'package:clothing/profile_screen.dart';
+import 'package:clothing/assets/images/products/profile_screen.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import 'bag_screen.dart';
-import 'core/themes/colors.dart';
-import 'favourits_screen.dart';
-import 'home_screen.dart';
+import '../bag/bag_screen.dart';
+import '../../core/themes/colors.dart';
+import '../favourites/favourits_screen.dart';
+import '../home/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

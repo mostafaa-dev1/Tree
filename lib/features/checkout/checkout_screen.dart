@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:icon_broken/icon_broken.dart';
 
-import 'core/themes/colors.dart';
-import 'constants/custom_button.dart';
-import 'constants/form_fieled.dart';
-import 'constants/text.dart';
+import '../../core/themes/colors.dart';
+import '../../core/widgets/custom_button.dart';
+import '../../core/widgets/form_fieled.dart';
+import '../../core/themes/text.dart';
 
 class CheckoutScreen extends StatefulWidget {
   const CheckoutScreen({super.key});
@@ -418,7 +418,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: SvgPicture.asset(
                               height: 70,
-                              'lib/assets/images/paypal.svg',
+                              'lib/assets/images/svg/paypal.svg',
                             )),
                         const SizedBox(
                           width: 10,
@@ -430,7 +430,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                                 borderRadius: BorderRadius.circular(10)),
                             child: SvgPicture.asset(
                               height: 70,
-                              'lib/assets/images/card.svg',
+                              'lib/assets/images/svg/card.svg',
                             )),
                       ],
                     )

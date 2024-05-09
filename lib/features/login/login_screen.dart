@@ -1,12 +1,12 @@
-import 'package:clothing/login_register/register_screen.dart';
+import 'package:clothing/features/register/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../core/themes/colors.dart';
-import '../constants/custom_button.dart';
-import '../constants/form_fieled.dart';
-import '../constants/pass_form_field.dart';
-import '../constants/text.dart';
+import '../../core/themes/colors.dart';
+import '../../core/widgets/custom_button.dart';
+import '../../core/widgets/form_fieled.dart';
+import '../../core/widgets/pass_form_field.dart';
+import '../../core/themes/text.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -15,6 +15,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var emailController = TextEditingController();
     var passwordController = TextEditingController();
+    var width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -25,32 +26,35 @@ class LoginScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Sign in', style: Styles.style30),
-                SizedBox(
+                Text('Sign in', style: Styles.style35),
+                const SizedBox(
                   height: 20,
                 ),
                 Text('Welcome back, you have been missed',
                     style: Styles.style16G400),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 CustomTextForm(
-                    width: MediaQuery.sizeOf(context).width / 1.5,
+                    width: width / 1.2,
                     labelText: 'Email',
                     controller: emailController),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 PasswordCustomTextForm(
-                    labelText: 'Password', controller: passwordController),
-                SizedBox(
+                  labelText: 'Password',
+                  controller: passwordController,
+                  width: width / 1.2,
+                ),
+                const SizedBox(
                   height: 20,
                 ),
                 Text(
                   'Forget password?',
                   style: Styles.style15color,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 CustomButton(
@@ -58,7 +62,7 @@ class LoginScreen extends StatelessWidget {
                   width: MediaQuery.sizeOf(context).width / 1.8,
                   color: AppColors.mainColor,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -69,14 +73,14 @@ class LoginScreen extends StatelessWidget {
                       width: 100,
                       color: Colors.grey[400],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Text(
                       'Or sign in with',
                       style: Styles.style16G400,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Container(
@@ -86,11 +90,11 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
                 Container(
-                    padding: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(10),
                     height: 45,
                     width: MediaQuery.sizeOf(context).width / 1.8,
                     decoration: BoxDecoration(
@@ -100,11 +104,11 @@ class LoginScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SvgPicture.asset(
-                          'lib/assets/images/google.svg',
+                          'lib/assets/images/svg/google.svg',
                           height: 25,
                           fit: BoxFit.scaleDown,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 10,
                         ),
                         Text(
@@ -113,7 +117,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ],
                     )),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 Row(
@@ -128,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => RegisterScreen(),
+                                builder: (context) => const RegisterScreen(),
                               ));
                         },
                         child: Text(

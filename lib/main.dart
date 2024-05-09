@@ -1,8 +1,8 @@
-import 'package:clothing/login_register/login_screen.dart';
+import 'package:clothing/features/login/login_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'core/themes/colors.dart';
-import 'main_screen.dart';
+import 'features/main/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
